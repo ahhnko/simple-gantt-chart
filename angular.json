@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gantt-chart"
+    }
+  },
+  "defaultProject": "gantt-chart",
+  "cli": {
+    "analytics": "c92aede4-670a-471a-a709-c2f48c466a11"
+  }
 }

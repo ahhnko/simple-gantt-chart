@@ -33,7 +33,8 @@ export class DateHelperService {
   /** This method will give you a month name based on a month number */
   static getMonthName(date: Date): string {
     const options = { month: 'short' };
-    return new Intl.DateTimeFormat('en-US', options).format(date);
+    return new Intl.DateTimeFormat('en-US').format(date);
+    // return new Intl.DateTimeFormat('en-US', options).format(date);
   }
 
   /** Given a date this method will return the number of days in the specified month */
