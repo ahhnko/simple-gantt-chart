@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DateHelperService {
 
-  constructor() { 
+  constructor() {
   }
 
-   /** Given a start and end date return the difference in months */
+  /** Given a start and end date return the difference in months */
   static monthDiff(dateFrom: Date, dateTo: Date): number {
     dateFrom = new Date(dateFrom);
     dateTo = new Date(dateTo);
@@ -16,7 +17,7 @@ export class DateHelperService {
       (12 * (dateTo.getFullYear() - dateFrom.getFullYear()));
   }
 
-   /** Given a start and end date return the difference in days */
+  /** Given a start and end date return the difference in days */
   static dateDifference(endDate: Date, startDate: Date, inlusiveOfEndDate: boolean = false): number {
     endDate = new Date(endDate);
     startDate = new Date(startDate);
@@ -32,9 +33,13 @@ export class DateHelperService {
 
   /** This method will give you a month name based on a month number */
   static getMonthName(date: Date): string {
-    const options = { month: 'short' };
-    return new Intl.DateTimeFormat('en-US').format(date);
+    // const options = { month: 'short' };
+
+    // return new Intl.DateTimeFormat('en-US').format(date);
     // return new Intl.DateTimeFormat('en-US', options).format(date);
+   
+    const momentDate = moment(date);
+    return momentDate.format('MMMM');
   }
 
   /** Given a date this method will return the number of days in the specified month */
@@ -48,5 +53,5 @@ export class DateHelperService {
     // always assume just shifting one month across so set date to first day of month
     const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
     return new Date(firstDayOfMonth.setMonth(monthsToAdd + firstDayOfMonth.getMonth()));
-  } 
+  }
 }

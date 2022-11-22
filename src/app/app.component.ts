@@ -11,34 +11,36 @@ import { IGanttChartMileStone } from './gantt-chart/_models/gantt-chart-mileston
 export class AppComponent {
   title = 'gantt-chart';
   rows: IGanttCharRow[];
+ startDate: Date = new Date('2021-01-02');
+ endDate: Date = new Date('2021-04-30');
   constructor() {
     this.rows = [
-      {name: 'Sprint plan', events:  [
-                        {name: 'Design sprint', startDate: new Date('2021-01-01'),  endDate: new Date('2021-01-31')} as IGanttChartEvent,
-                        {name: 'Sprint 1', startDate: new Date('2021-02-03'),  endDate: new Date('2021-02-17')} as IGanttChartEvent,
-                        {name: 'Design sprint', startDate: new Date('2021-03-01'),  endDate: new Date('2021-03-31')} as IGanttChartEvent,
-                        {name: 'Sprint 2', startDate: new Date('2021-04-05'),  endDate: new Date('2021-04-19')} as IGanttChartEvent
-                        
-                      ],
-                        mileStones: [
-                                    {name:'Feature complete', date: new Date('2021-04-15')} as IGanttChartMileStone]
+      {
+        name: 'Sprint plan', events: [
+          { name: 'Design sprint', startDate: new Date('2021-01-01'), endDate: new Date('2021-01-31') } as IGanttChartEvent
+
+        ]
       } as IGanttCharRow,
-      {name: 'Market activation', events:  [
-                                    {name: 'Market activity', startDate: new Date('2021-02-15'),  endDate: new Date('2021-02-28')} as IGanttChartEvent
-                                    ],
-        mileStones: [{name:'Funding round complete', date: new Date('2021-01-28')} as IGanttChartMileStone]
+      {
+        name: 'Market activation', events: [
+          { name: 'Market activity', startDate: new Date('2021-02-15'), endDate: new Date('2021-02-28') } as IGanttChartEvent
+        ],
+        mileStones: [{ name: 'Funding round complete', date: new Date('2021-01-28') } as IGanttChartMileStone]
       } as IGanttCharRow,
-      {name: 'Google ads campaign', events:  [
-                                    {name: 'Busy period', startDate: new Date('2021-03-02'),  endDate: new Date('2021-03-15')} as IGanttChartEvent
-                              ]      
+      {
+        name: 'Google ads campaign', events: [
+          { name: 'Busy period', startDate: new Date('2021-03-02'), endDate: new Date('2021-03-15') } as IGanttChartEvent
+        ]
       } as IGanttCharRow,
-      {name: 'Client feedback', events:  [
-                                    {name: 'Manual collection', startDate: new Date('2021-03-15'),  endDate: new Date('2021-03-30')} as IGanttChartEvent
-                              ]      
+      {
+        name: 'Client feedback', events: [
+          { name: 'Manual collection', startDate: new Date('2021-03-15'), endDate: new Date('2021-03-30') } as IGanttChartEvent
+        ]
       } as IGanttCharRow,
-      {name: 'Implementation window', events:  [
-                                    {name: 'Busy period', startDate: new Date('2021-04-15'),  endDate: new Date('2021-04-30')} as IGanttChartEvent
-                              ]      
+      {
+        name: 'Implementation window', events: [
+          { name: 'Busy period', startDate: new Date('2021-04-15'), endDate: new Date('2021-04-30') } as IGanttChartEvent
+        ]
       } as IGanttCharRow
 
     ]
